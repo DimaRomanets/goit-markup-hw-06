@@ -634,8 +634,8 @@
     </footer>
 
     <!-- Модальне вікно -->
-
-    <div class="backdrop is-hidden" data-modal>
+    <!-- is-hidden -->
+    <div class="backdrop" data-modal>
       <div class="modal">
         <button type="button" class="modal-close-btn" data-modal-close>
           <svg class="modal-close-icon" width="8" height="8">
@@ -645,14 +645,15 @@
         <p class="title-wrapper">
           Leave your contacts and we will call you back
         </p>
-        <form class="contact-form">
-          <label class="contact-form-wrapper">
-            <span class="contact-form-field-wrapper">Name</span>
-            <span class="contact-form-input-wrapper">
+        <form class="contact-form-modal">
+          <div class="contact-form">
+            <label class="contact-form-wrapper" for="user-name"> Name </label>
+            <div class="contact-form-input-wrapper">
               <input
                 class="contact-form-input"
                 type="text"
-                name="user_name"
+                name="user-name"
+                id="user-name"
                 required
                 pattern="[a-zA-Zа-яА-ЯіІїЇґҐєЄʼ]+"
                 autofocus
@@ -665,15 +666,17 @@
               >
                 <use href="./images/icons.svg#icon-person_input"></use>
               </svg>
-            </span>
-          </label>
-          <label class="contact-form-wrapper">
-            <span class="contact-form-field-wrapper">Phone</span>
-            <span class="contact-form-input-wrapper">
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <label class="contact-form-wrapper" for="user-tel"> Phone </label>
+            <div class="contact-form-input-wrapper">
               <input
                 class="contact-form-input"
                 type="tel"
-                name="user_tel"
+                name="user-tel"
+                id="user-tel"
                 required
                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
                 title="xxx-xxx-xx-xx"
@@ -686,15 +689,17 @@
               >
                 <use href="./images/icons.svg#icon-phone_input"></use>
               </svg>
-            </span>
-          </label>
-          <label class="contact-form-wrapper">
-            <span class="contact-form-field-wrapper">Email</span>
-            <span class="contact-form-input-wrapper">
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <label class="contact-form-wrapper" for="user-email"> Email </label>
+            <div class="contact-form-input-wrapper">
               <input
                 class="contact-form-input"
                 type="email"
-                name="user_email"
+                name="user-email"
+                id="user-email"
                 required
               />
               <svg
@@ -705,35 +710,46 @@
               >
                 <use href="./images/icons.svg#icon-email_input"></use>
               </svg>
-            </span>
-          </label>
+            </div>
+          </div>
 
-          <label class="contact-form-wrapper">
-            <span class="contact-form-field-wrapper">Comment</span>
-            <textarea
-              class="contact-form-message"
-              name="user_message"
-              placeholder="Text input"
-            ></textarea>
-          </label>
-          <label class="contact-form-checkbox-wrapper">
+          <div class="contact-form">
+            <label class="contact-form-wrapper" for="user-commen">
+              Comment
+            </label>
+            <div class="contact-form-input-wrapper contact-comen">
+              <textarea
+                class="contact-form-message"
+                name="user-commen"
+                value="true"
+                placeholder="Text input"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="contact-form-input-checkbox">
             <input
-              class="contact-form-checkbox"
+              class="input-checkbox visually-hidden"
+              id="user-privacy"
               type="checkbox"
-              name="user_policy"
-              required
+              value="true"
+              name="user-privacy"
             />
-            <svg class="contact-form-own-checkbox" width="16" height="16">
-              <use
-                class="contact-form-checkmark-icon"
-                href="./images/icons.svg#icon-checkmark"
-              ></use>
-            </svg>
-            <span class="text-checkbox-wrapper"
-              >I accept the terms and conditions of the
+            <label class="text-checkbox-wrapper" for="user-privacy">
+              <span class="contact-form-checkbox">
+                <svg class="contact-form-own-checkbox" width="10" height="8">
+                  <use
+                    class="contact-form-checkmark-icon"
+                    href="./images/icons.svg#icon-checkmark"
+                  ></use>
+                </svg>
+              </span>
+              I accept the terms and conditions of the
+
               <a class="text-checkbox-wrapper-link" href="">Privacy Policy</a>
-            </span>
-          </label>
+            </label>
+          </div>
+
           <button type="submit" class="contact-form-submit">Send</button>
         </form>
       </div>
