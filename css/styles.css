@@ -686,11 +686,11 @@ img {
 
 .container-input-footer {
     display: flex;
-    gap: 24px;
+
 }
 
 .contact-form-footer {
-    display: block;
+    margin-right: 24px;
 }
 
 
