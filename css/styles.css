@@ -720,7 +720,7 @@ img {
 .contact-form-input-footer:focus {
     outline: none;
     border-color: #4D5AE5;
-    background-color: #2E2F42;
+    background-color: transparent;
 }
 
 
